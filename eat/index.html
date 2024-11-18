@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Liaison CSS -->
+    <link rel="stylesheet" href="css/materialize.css" media="screen,projection" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" media="screen,projection" type="text/css"/>
+</head>
+<body>
+
+    <nav class="black 20px">
+      <div class="nav-wrapper container ">
+        <a href="#!" class="brand-logo">EAT</a>
+        <ul class="right hide-on-med-and-down BLACK">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+        <!-- Zone d'affichage -->
+        <div id="result" class="card-panel teal lighten-4 center-align" style="display: none;">
+          <h5 id="selectedFood"></h5>
+        </div>
+      </div>
+      <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+          overflow: auto;
+        }
+        .slideshow {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1; /* Derrière le contenu */
+        }
+        .slideshow img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          animation: slideAnimation 20s infinite;
+        }
+        .carousel{
+          pointer-events: none;
+        }
+        @keyframes slideAnimation {
+          0%, 100% { opacity: 0; }
+          25%, 75% { opacity: 1; }
+        }
+        .slideshow img:nth-child(1) { animation-delay: 10s; }
+        .slideshow img:nth-child(2) { animation-delay: 10s; }
+        .slideshow img:nth-child(3) { animation-delay: 10s; }
+      </style>
+    </head>
+    <body>
+      <!-- Diaporama en arrière-plan -->
+      <div class="slideshow">
+        <img src="BACK7.jpg" alt="Slide 1">
+        <img src="BACK8.jpg" alt="Slide 2">
+        <img src="BACK9.jpg" alt="Slide 3">
+      </div>
+    
+      <!-- Contenu principal -->
+      <div class="container center-align white-text">
+        <h1>Bienvenue sur EAT</h1>
+        <p>BONNE APPETIT</p>
+      </div>
+    
+    
+      <!-- Importation du JavaScript de Materialize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script>
+        // Initialisation de Materialize pour les listes déroulantes
+        document.addEventListener('DOMContentLoaded', function () {
+          const elems = document.querySelectorAll('select');
+          M.FormSelect.init(elems);
+        });
+    
+        // Gestion de l'événement du bouton
+        document.getElementById('submitBtn').addEventListener('click', function () {
+          const selectedValue = document.getElementById('foodSelect').value;
+          const result = document.getElementById('result');
+          const selectedFood = document.getElementById('selectedFood');
+          
+          if (selectedValue) {
+            selectedFood.textContent = `Vous avez choisi : ${selectedValue}`;
+            result.style.display = 'block';
+          } else {
+            alert('Veuillez sélectionner une nourriture.');
+          }
+        });
+      </script>
+      
+      <!-- Accueil -->
+      <section id="home" class="section scrollspy">
+        <div class="container">
+          <h2 class="center-align">Bienvenue sur EAT</h2>
+          <p class="center-align"></p>
+        </div>
+      </section>
+    
+      <!-- Menu -->
+      <section id="menu" class="section scrollspy">
+        <div class="container">
+         <a href="menu.html"></a>
+          <div class="input-field">
+            <select id="foodSelect">
+              <option value="" disabled selected>Choisissez une option</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Burger">Burger</option>
+              <option value="Sushi">Sushi</option>
+              <option value="Salade">Salade</option>
+            </select>
+            <label>Choisissez un plat</label>
+          </div>
+          <div class="center-align">
+            <button id="submitBtn" class="btn waves-effect waves-light">Valider</button>
+          </div>
+          <div id="result" class="card-panel teal lighten-4 center-align" style="display: none;">
+            <h5 id="selectedFood"></h5>
+          </div>
+        </div>
+      </section>
+    
+      <!-- À propos -->
+      <section id="about" class="section scrollspy  lighten-5">
+        <div class="container">
+          <h3 class="center-align">À propos</h3>
+          <p>FoodChoice est une plateforme innovante pour simplifier le choix de nourriture. Notre objectif est de vous offrir une expérience rapide et agréable.</p>
+        </div>
+      </section>
+    
+      <!-- Contact -->
+      <section id="contact" class="section scrollspy">
+        <div class="container">
+          <h3 class="center-align">Contact</h3>
+          <form>
+            <div class="input-field">
+              <input type="text" id="name" required>
+              <label for="name">Nom</label>
+            </div>
+            <div class="input-field">
+              <input type="email" id="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <textarea id="message" class="materialize-textarea" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            <div class="center-align">
+              <button class="btn waves-effect waves-light" type="submit">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    
+      <!-- Footer -->
+      <footer class="page-footer black">
+        <div class="container">
+          <div class="center-align">
+            &copy; 2024 FoodChoice. Tous droits réservés.
+          </div>
+        </div>
+      </footer>
+    
+      <!-- Importation du JS de Materialize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="scripts.js"></script>
+    
+    
+    <!-- Liaison JS <script src="https//code.jquery.com/jquery-2.1.1.min.js"></script> -->
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  
+</body>
+</html>

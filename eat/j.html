@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Slideshow</title>
+  <!-- Import de Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .slideshow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Derrière le contenu */
+    }
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: slideAnimation 20s infinite;
+    }
+    @keyframes slideAnimation {
+      0%, 100% { opacity: 0; }
+      25%, 75% { opacity: 1; }
+    }
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 5s; }
+    .slideshow img:nth-child(3) { animation-delay: 10s; }
+  </style>
+</head>
+<body>
+  <!-- Diaporama en arrière-plan -->
+  <div class="slideshow">
+    <img src="image1.jpg" alt="Slide 1">
+    <img src="image2.jpg" alt="Slide 2">
+    <img src="image3.jpg" alt="Slide 3">
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="container center-align white-text">
+    <h1>Bienvenue</h1>
+    <p>Ceci est un site avec un background en diaporama</p>
+  </div>
+
+  <!-- Import de Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choix de Nourriture</title>
+  <!-- Importation du CSS de Materialize -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="teal">
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo">FoodChoice</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Accueil -->
+  <section id="home" class="section scrollspy">
+    <div class="container">
+      <h2 class="center-align">Bienvenue sur FoodChoice</h2>
+      <p class="center-align">Votre plateforme pour choisir vos plats préférés.</p>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="section scrollspy">
+    <div class="container">
+      <h3 class="center-align">Menu</h3>
+      <div class="input-field">
+        <select id="foodSelect">
+          <option value="" disabled selected>Choisissez une option</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Burger">Burger</option>
+          <option value="Sushi">Sushi</option>
+          <option value="Salade">Salade</option>
+        </select>
+        <label>Choisissez un plat</label>
+      </div>
+      <div class="center-align">
+        <button id="submitBtn" class="btn waves-effect waves-light">Valider</button>
+      </div>
+      <div id="result" class="card-panel teal lighten-4 center-align" style="display: none;">
+        <h5 id="selectedFood"></h5>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="about" class="section scrollspy teal lighten-5">
+    <div class="container">
+      <h3 class="center-align">À propos</h3>
+      <p>FoodChoice est une plateforme innovante pour simplifier le choix de nourriture. Notre objectif est de vous offrir une expérience rapide et agréable.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section scrollspy">
+    <div class="container">
+      <h3 class="center-align">Contact</h3>
+      <form>
+        <div class="input-field">
+          <input type="text" id="name" required>
+          <label for="name">Nom</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <textarea id="message" class="materialize-textarea" required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <div class="center-align">
+          <button class="btn waves-effect waves-light" type="submit">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="center-align">
+        &copy; 2024 FoodChoice. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Importation du JS de Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

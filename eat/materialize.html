@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choix de Nourriture</title>
+  <!-- Importation du CSS de Materialize -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <h3 class="center-align">Choisissez votre nourriture</h3>
+    
+    <!-- Liste déroulante -->
+    <div class="input-field">
+      <select id="foodSelect">
+        <option value="" disabled selected>Choisissez une option</option>
+        <option value="pizza">Pizza</option>
+        <option value="burger">Burger</option>
+        <option value="sushi">Sushi</option>
+        <option value="salade">Salade</option>
+      </select>
+      <label>Votre plat préféré</label>
+    </div>
+
+    <!-- Bouton de validation -->
+    <div class="center-align">
+      <button id="submitBtn" class="btn waves-effect waves-light">Valider</button>
+    </div>
+
+    <!-- Zone d'affichage -->
+    <div id="result" class="card-panel teal lighten-4 center-align" style="display: none;">
+      <h5 id="selectedFood"></h5>
+    </div>
+  </div>
+
+  <!-- Importation du JavaScript de Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Initialisation de Materialize pour les listes déroulantes
+    document.addEventListener('DOMContentLoaded', function () {
+      const elems = document.querySelectorAll('select');
+      M.FormSelect.init(elems);
+    });
+
+    // Gestion de l'événement du bouton
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const selectedValue = document.getElementById('foodSelect').value;
+      const result = document.getElementById('result');
+      const selectedFood = document.getElementById('selectedFood');
+      
+      if (selectedValue) {
+        selectedFood.textContent = `Vous avez choisi : ${selectedValue}`;
+        result.style.display = 'block';
+      } else {
+        alert('Veuillez sélectionner une nourriture.');
+      }
+    });
+  </script>
+</body>
+</html>
