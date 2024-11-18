@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moto Shop</title>
+  <link rel="stylesheet" href="css/materialize.css" type="text/css" media="screen,projection">
+  <link href="css/materialize.css" rel="stylesheet" type="text/css" media="screen,projection">
+  
+  <!-- Custom CSS -->
+  <style>
+    .hero {
+      background-image: url(bg1.webp);
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .card-image img {
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="black">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Moto Shop</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Galerie</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero black-text">
+    <h1 class="custom-border grey">Bienvenue chez Zarra Motors</h1>
+  </div>
+
+  <!-- About Section -->
+  <div id="about" class="section">
+    <div class="container">
+      <h2 class="center-align">À propos</h2>
+      <p class="center-align">Zarra Motors propose les meilleures motos, accessoires et services pour tous les passionnés de deux-roues.</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <div id="gallery" class="section">
+    <div class="container">
+      <h2 class="center-align">Nos collections</h2>
+      <div class="row">
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="moto1.webp" alt="Moto 1">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Moto Sport</span>
+              <p>Vitesse et performance pour les passionnés de sensations fortes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="moto2.avif" alt="Moto 2">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Moto Urbaine</span>
+              <p>Parfaite pour naviguer en ville avec style et agilité.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="moto3.jpg" alt="Moto 3">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Moto Tout Terrain</span>
+              <p>Conçue pour dominer les terrains les plus difficiles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="section black white-text">
+    <div class="container">
+      <h2 class="center-align">Contactez-nous</h2>
+      <form>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input id="name" type="text" class="validate">
+            <label for="name">Nom</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12">
+            <textarea id="message" class="materialize-textarea"></textarea>
+            <label for="message">Message</label>
+          </div>
+        </div>
+        <button type="submit" class="btn red waves-effect waves-light">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <p class="center-align">© 2024 Zarra Motors</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Import Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="materialize.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/materialize.init.js"></script>
+</body>
+</html>
